@@ -1,0 +1,6 @@
+p {
+    background-color: none;
+}
+p.active {
+    background-color: green;
+}
