@@ -1,19 +1,18 @@
-document.getElementById("reloj").onload = mostrarReloj;
-window.onunload = mostrarMensaje2;
+window.onload = function () {
+  document.getElementById("reloj").innerHTML += new Date()
+  window.onunload = mostrarMensajeSalida
+  mostrarMensaje()
+}
+
+function mostrarMensajeSalida() {
+  window.addEventListener('unload', function() {
+    this.alert('Pagina cancelada')
+  })
+  window.addEventListener('beforeunload', function() {
+    this.alert('Pagina cancelada')
+  })
+}
 
 function mostrarMensaje() {
-    alert('Pagina que contiene un reloj digital')
-}
-
-function mostrarMensaje2() {
-    alert('Pagina cancelada')
-}
-
-var fechaHora = new Date();
-function mostrarReloj() {
-    mostrarMensaje()
-    var horas = fechaHora.getHours();
-    var minutos = fechaHora.getMinutes();
-    var segundos = fechaHora.getSeconds();
-    this.innerHTML = horas+':'+minutos+':'+segundos;
+  alert('Estas en una pagina con un reloj digital')
 }
