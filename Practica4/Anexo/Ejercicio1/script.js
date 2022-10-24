@@ -1,8 +1,11 @@
-function validar() {
-    Array.from(document.getElementsByTagName('input')).forEach(input => {
-    if(input.value = "") {
-       return false;
+window.onload = function () {
+    document.getElementById('formulario').onsubmit = validar
+}
+
+function validar(evento) {
+    var elEvento = evento
+    if(this.nombre.value == '' || this.apellidos.value == '') {
+        elEvento.preventDefault()
+        alert('campos vacios')    
     }
-    })
-    return true
 }
